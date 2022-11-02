@@ -8,14 +8,13 @@ export default defineConfig({
   plugins: [
     vue(),
     VitePWA({
-      injectRegister: 'auto',
       registerType: 'autoUpdate',
       manifest: {
         name: "App for tests",
         short_name: "AppTest",
         description: "App for tests",
+        start_url: '/',
         theme_color: "#ffffff",
-        display: "standalone",
         icons: [
           {
             src: "/android-chrome-192x192.png",
@@ -29,10 +28,6 @@ export default defineConfig({
           }
         ],
         background_color: "#ffffff",
-      },
-      workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
-        sourcemap: true
       },
     })
   ],
